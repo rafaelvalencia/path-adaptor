@@ -79,7 +79,7 @@ class CHOMP
 /*
  * CHOMP class to work with planar differential-drive robot, i.e. it can translate and rotate 
  * and its workspace is still 2-dimensional, 
- * but Coifguration Space is the special Euclidean group SE(2) = R2 × SO(2) 
+ * but Configuration Space is the special Euclidean group SE(2) = R2 × SO(2) 
  * (where SO(2) is the special orthogonal group of 2D rotations). 
  * Its configuration is represented using 3 parameters (x, y, orientation).
 */
