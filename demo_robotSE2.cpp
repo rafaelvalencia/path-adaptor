@@ -210,7 +210,7 @@ static void cb_idle ()
   }
 
   static size_t stepcounter (0);
-  cout << "step " << stepcounter++ << "\n";
+  //cout << "step " << stepcounter++ << "\n";
   
   /////////////////////////////////////////////////
   // Get updated obstacles  

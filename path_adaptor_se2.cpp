@@ -234,7 +234,7 @@ double CHOMP_SE2::chompIteration(Vector  &xi)
 	if (b < 1.0e-10) 
 	{ 
 		//unconstrained update to initialize trajectory (it starts with b aprox to zero)
-		cout << " One unconstrained update to initialize trajectory  " << endl;
+		//cout << " One unconstrained update to initialize trajectory  " << endl;
 		xi_ -= dxi / eta_; 
 		
 		Vector dxi (Ainv_ * (nabla_obs + lambda_ * nabla_smooth));
@@ -249,7 +249,7 @@ double CHOMP_SE2::chompIteration(Vector  &xi)
 	 
 		Vector Proj (Ainv_ * CC * CACinv); //auxiliar matrix for the update equation
  
-		cout << "b =" << b << "\n";
+		//cout << "b =" << b << "\n";
 		Vector cdxi ( - dxi/eta_  +  Proj*CCtrans*dxi / eta_ -  Proj * b  );
 
 		xi_ += cdxi; //constrained update
