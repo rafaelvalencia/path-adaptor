@@ -413,6 +413,23 @@ void CHOMP::generatePath(Vector  &xi)
 	
 }
 
+//optimize path using with numIt_ iterations with serch region.	
+void CHOMP::generatePathWithSearchReg(Vector  &xi, double orientation, double &U_cost, double &curv)	
+{
+	double err;
+	for (size_t ii(0); ii < numIt_; ++ii)  
+	{
+		err = CHOMP::chompUpdateWithSearchRegion(xi, orientation,U_cost,curv);
+		if (err < 0.01)
+		{
+			//it converged
+			cter_ = 0;
+			break;
+		}
+	}	
+	
+}
+
 void CHOMP::addObstacle(double px, double py, double radius)
 {
 	OBS_.conservativeResize(obs_dim, OBS_.cols() + 1);

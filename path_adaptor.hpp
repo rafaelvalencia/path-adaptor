@@ -63,6 +63,7 @@ class CHOMP
 		CHOMP(double dt_input, double eta_input, double lambda_input, size_t nq_input, size_t cdim_input, size_t numIt_, double gain);
 		void initCHOMP(void); 			//Initializes gradient descent vectors and matrices
 		void generatePath(Vector  &xi);	//optimize path using with numIt_ iterations
+		void generatePathWithSearchReg(Vector  &xi, double orientation, double &U_cost, double &curv);	//optimize path using with numIt_ iterations with serch region.		
 		double chompIteration(Vector  &xi);	//performs a single gradient descent iteration
 		double chompUpdate(Vector  &xi, double &U_cost, double &curv); //performs a single gradient descent iteration and gives more data
 		double chompUpdateWithSearchRegion(Vector  &xi, double orientation, double &U_cost, double &curv);	//performs a single gradient descent iteration withing predefined search region	
